@@ -1,0 +1,40 @@
+{
+  "name": "filegate",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Upload admission gateway: content-based format detection, polyglot detection, archive preflight, image re-encoding, quarantine review.",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "dev:server": "node --watch src/server/main.ts",
+    "dev:web": "vite",
+    "build:web": "vite build",
+    "start": "node src/server/main.ts",
+    "scan": "node tools/scan-cli.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p tsconfig.web.json --noEmit",
+    "fixtures": "node tools/generate-fixtures.ts",
+    "test": "node --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "@fastify/multipart": "^9.4.0",
+    "@fastify/static": "^10.1.11",
+    "fastify": "^5.12.8",
+    "jpeg-js": "^0.4.4",
+    "omggif": "^1.0.10",
+    "pngjs": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/jpeg-js": "^0.3.7",
+    "@types/node": "^24.19.2",
+    "@types/pngjs": "^6.0.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^5.2.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.8"
+  }
+}
